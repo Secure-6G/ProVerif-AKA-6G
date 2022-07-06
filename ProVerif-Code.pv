@@ -136,11 +136,11 @@ let SN(SNname:bitstring)=
     let sXRES = f1((URESstar,rSN)) in
     if sXRES = sHXRES then 
     event SNRecConUE(sHXRES);
-    let sK3=xor(sXRES,f1((URESstar,rSN))) in
+    let sK3=xor(sXRES,f5((URESstar,rSN))) in
     let (skSEAF:bitstring,sSUPI:bitstring)=sdec(sM, sK3) in
     new conf:bitstring;
     event SNSendConHN(conf);
-    out(sch,(conf, skSEAF, sSUPI)).
+    out(sch,(conf)).
 
 (* The process at the HN *)
         (* Identification phase *)
@@ -176,7 +176,7 @@ let HN(skHN:secKey,idHN:bitstring)=
             
     let kSEAF = keyseed((kAUSF,hSNname)) in
 
-    let K3=xor(XRES,f1((hk,Ks2))) in
+    let K3=xor(XRES,f5((hk,Ks2))) in
     let M=senc((kSEAF,hSUPI), K3) in
 
 
@@ -184,9 +184,10 @@ let HN(skHN:secKey,idHN:bitstring)=
     out(sch,(c2,HXRES,M,CONC,MAC2));
 (* End of Authentication material generation *)
 
-    in(sch,(hconf:bitstring, hskSEAF:bitstring, hsSUPI:bitstring));
-    if (hskSEAF=kSEAF && hsSUPI=hSUPI) then
-    event HNRecConSN(hconf).
+in(sch,hconf:bitstring);
+event HNRecConSN(hconf).
+    
+   
 
 
 
