@@ -3,32 +3,30 @@ The file contains formal verification code for an Authentication and Key Agreeme
 
 $\textbf{ProVerif implementation:}$
 
-We assume that the channel between the UE and the SN is unsecure, we denote such a channel by usch. The channel between the SN and the HN is considered secure and denoted by sch. Moreover, $\sk_{HN}$, the secret key of the HN, and the long term key $K$ at the UE/HN are considered private at the beginning of the protocol execution. In the ProVerif code We denote $\sk_{HN}$ and $K$ by skHN and K respectively. We use a function \texttt{getkey} to model the fact of retrieving the key K from the HN database based on the UE's SUPI. The symmetric primitives for authentication are refereed to by $f_1, f_2, f_3, f_4, f_5$ and SHA.
-A function \texttt{keyseed} is used as a key derivation function. Finally, the symmetric encryption is given by the usual following form
+We assume that the channel between the UE and the SN is unsecure, we denote such a channel by usch. The channel between the SN and the HN is considered secure and denoted by sch. Moreover, $sk_{HN}$, the secret key of the HN, and the long term key $K$ at the UE/HN are considered private at the beginning of the protocol execution. In the ProVerif code We denote $\sk_{HN}$ and $K$ by skHN and K respectively. We use a function getkey to model the fact of retrieving the key K from the HN database based on the UE's SUPI. The symmetric primitives for authentication are refereed to by $f_1, f_2, f_3, f_4, f_5$ and SHA.
+A function keyseed is used as a key derivation function. Finally, the symmetric encryption is given by the usual following form
 
 fun senc(bitstring,bitstring):bitstring.
+
 reduc forall m:bitstring,n:bitstring; 
+
 sdec(senc(m,n),n)=m.
     
 
 Next, we explain our implementation choices for the KEM and the XOR operation.
 
-Modeling KEMs:
+$\textbf{Modeling KEMs:}$
 
 By definition the encapsulation algorithm Encaps, is a probabilistic algorithm taking as input a given public key and outputs a symmetric key K and a cipher text c, we capture such a property by modeling encapsulation process as three functions, a function $\textbf{Encaps}$ with inputs a variable of type public key and a freshly generated random bit string and a bit string output, 
   
-\begin{center}
-\begin{verbatim}
+
 fun Encaps(pubKey,bitstring):bitstring.
-\end{verbatim}
-\end{center}
+
 A function $\texttt{KEMkey}$ which takes Encaps as input and outputs the shared KEM key
-\begin{center}
-   \begin{verbatim}
+
 fun KEMkey(bitstring):bitstring.
-\end{verbatim} 
-\end{center}
-A function \texttt{KEMCipher} which takes Encaps as input and outputs the KEM ciphertext
+
+A function $\texttt{KEMCipher}$ which takes Encaps as input and outputs the KEM ciphertext
 
 \begin{verbatim}
 fun KEMCipher(bitstring):bitstring. 
