@@ -37,7 +37,9 @@ fun DecapsKey(secKey,bitstring):bitstring.
 Finally, the KEM satisfies the following equation:
 
 equation forall sk:secKey, r:bitstring;
+
 DecapsKey(sk,KEMCipher(Encaps(pk(sk),r)))=
+
 KEMkey(Encaps(pk(sk),r)).
 
 $\textbf{Modeling the XOR operation}$
