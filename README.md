@@ -1,6 +1,8 @@
 # ProVerif-AKA-6G
 The file contains formal verification code for an Authentication and Key Agreement (AKA) protocol for future generation of wireless mobile networks (6G). 
 
+This work has been done by the Secure Systems Group, University of Helsinki, by Prof. Valtteri Niemi, Dr. Tommi Meskanen, Dr. Mohamed Taoufiq Damir, and Dr. Sara Ramezanian.
+
 $\textbf{ProVerif implementation:}$
 
 We assume that the channel between the UE and the SN is unsecure, we denote such a channel by usch. The channel between the SN and the HN is considered secure and denoted by sch. Moreover, sk_{HN}, the secret key of the HN, and the long term key K at the UE/HN are considered private at the beginning of the protocol execution. In the ProVerif code We denote sk_{HN} and K by skHN and K respectively. We use a function getkey to model the fact of retrieving the key K from the HN database based on the UE's SUPI. The symmetric primitives for authentication are refereed to by $f_1, f_2, f_3, f_4, f_5$ and SHA.
