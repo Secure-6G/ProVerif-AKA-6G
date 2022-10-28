@@ -60,5 +60,3 @@ equation forall m:bitstring,n: bitstring;
 $\textbf{About the file Forward.pv}$
 
 To prove forward secrecy, we assume that an attacker compromised both the HN and UE. More precisely, the attacker possesses the long term key K, sk_{HN} the HN secret key and the long term identifier SUPI. To do so we used the concept of “phases”. For more detail see Section 4.1.6 in the Proverif manual available at https://bblanche.gitlabpages.inria.fr/proverif/manual.pdf Proverif shows that the session key remains secret under the above assumptions, namely: Query not attacker_p1(Ksession[]) is true.
-
-To prove forward secrecy, we assume that an attacker compromised both the HN and UE. More precisely, the attacker possesses the long term key K, sk_{HN} the HN secret key and the long term identifier SUPI. To do so we used the concept of “phases”. For more detail see Section 4.1.6 in the Proverif manual available at https://bblanche.gitlabpages.inria.fr/proverif/manual.pdf Proverif shows that the session key remains secret under the above assumptions, namely: Query not attacker_p1(Ksession[]) is true.
