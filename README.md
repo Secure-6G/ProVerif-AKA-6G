@@ -7,6 +7,7 @@ The file $\textbf{ProVerif-Code.pv}$ contains formal verification code for an Au
 $\textbf{ProVerif implementation:}$
 
 We assume that the channel between the UE and the SN is unsecure, we denote such a channel by usch. The channel between the SN and the HN is considered secure and denoted by sch. Moreover, sk_{HN}, the secret key of the HN, and the long term key K at the UE/HN are considered private at the beginning of the protocol execution. In the ProVerif code We denote sk_{HN} and K by skHN and K respectively. We use a function getkey to model the fact of retrieving the key K from the HN database based on the UE's SUPI. The symmetric primitives for authentication are refereed to by $f_1, f_2, f_3, f_4, f_5$ and SHA.
+
 A function keyseed is used as a key derivation function. Finally, the symmetric encryption is given by the usual following form
 
 fun senc(bitstring,bitstring):bitstring.
