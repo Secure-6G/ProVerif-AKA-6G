@@ -2,6 +2,8 @@
 
 <!-- This work has been done by the Secure Systems Group, University of Helsinki, by Prof. Valtteri Niemi, Dr. Tommi Meskanen, Dr. Mohamed Taoufiq Damir, and Dr. Sara %Ramezanian. For more information please visit https://arxiv.org/abs/2207.06144. -->
 
+This work has been done by the Secure Systems Group, University of Helsinki, by Prof. Valtteri Niemi, Dr. Tommi Meskanen, Dr. Mohamed Taoufiq Damir, and Dr. Sara %Ramezanian. For more information please visit https://arxiv.org/abs/2207.06144. 
+
 The file $\textbf{ProVerif-Code.pv}$ contains formal verification code for an Authentication and Key Agreement (AKA) protocol for future generation of wireless mobile networks (6G). 
 
 $\textbf{ProVerif implementation:}$
