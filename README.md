@@ -1,6 +1,6 @@
 # ProVerif-AKA-6G
 
-This work has been done by the Secure Systems Group, University of Helsinki, by Prof. Valtteri Niemi, Dr. Tommi Meskanen, Dr. Mohamed Taoufiq Damir, and Dr. Sara Ramezanian. For more information please visit https://link.springer.com/chapter/10.1007/978-3-031-23020-2_14.
+This work has been done by the Secure Systems Group, at the University of Helsinki, by Prof. Valtteri Niemi, Dr. Tommi Meskanen, Dr. Mohamed Taoufiq Damir, and Dr. Sara Ramezanian. For more information please visit https://link.springer.com/chapter/10.1007/978-3-031-23020-2_14.
 
 The file $\textbf{ProVerif-Code.pv}$ contains formal verification code for an Authentication and Key Agreement (AKA) protocol for future generation of wireless mobile networks (6G). 
 
